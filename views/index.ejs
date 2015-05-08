@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include ./include/header %>
+    <main>
+
+<table class="table table-hover">
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+         <% contactList.forEach(function(contact){ %>
+            <tr>
+            <th scope="row"><%= contact._id %></th>
+            <td><%= contact.name %></td>
+            <td><%= contact.age %></td>
+            <td><%= contact.email %></td>
+             <td><%= contact.phone %></td>
+             <td><%= contact.time %></td>
+             <td> <a href="/edit/<%= contact._id %>">Edit This Item</a></td>
+             <td> <a href="/delete/<%= contact._id %>">Remove This Item</a></td>
+          </tr>
+         <% });%>
+
+      </tbody>
+    </table> 
+    </main>
+
+  
+     <% include ./include/footer %>
+</body>  
+</html>
